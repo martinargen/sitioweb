@@ -1,0 +1,67 @@
+{% include 'cabecera.html' %}
+
+<br>
+
+<div id="carouselExample" class="carousel slide position-relative" data-bs-ride="carousel" data-bs-interval="3000">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="../../static/img/puesta_de_sol_marina.jpg" class="d-block w-100" alt="puestaSol">
+            <div class="carousel-caption d-none d-md-block">
+                <h5 class="cursiva-caligrafica">Título de la imagen 1</h5>              
+            </div>
+        </div>
+      <div class="carousel-item">
+        <img src="../static/img/butterfly.jpg" class="d-block w-100" alt="butterfly">
+      </div>
+      <!-- Agrega más elementos "carousel-item" según sea necesario -->
+      <div class="carousel-item">
+        <img src="../static/img/casa2.jpg" class="d-block w-100" alt="casa2">
+      </div>
+      <div class="carousel-item">
+        <img src="../static/img/casa3.jpg" class="d-block w-100" alt="casa3">
+      </div>
+      <div class="carousel-item">
+        <img src="../static/img/casa4.jpg" class="d-block w-100" alt="casa4">
+      </div>
+      <div class="carousel-item">
+        <img src="../static/img/casa5.jpg" class="d-block w-100" alt="casa5">
+      </div>
+      <div class="carousel-item">
+        <img src="../static/img/casa6.jpg" class="d-block w-100" alt="casa6">
+      </div>
+      <div class="carousel-item">
+        <img src="../static/img/warehouse.jpg" class="d-block w-100" alt="warehouse">
+      </div>
+      <div class="carousel-item">
+        <img src="../static/img/flowers.jpg" class="d-block w-100" alt="flowers">
+      </div>
+      <div class="carousel-item">
+        <img src="../static/img/apple.jpg" class="d-block w-100" alt="apple">
+      </div>
+      <div class="carousel-item">
+        <img src="../static/img/bird-flowers.webp" class="-block w-100" alt="bird-flowers">
+      </div>
+      <div class="carousel-item">
+        <img src="../static/img/nuts.jpg" class="d-block w-100" alt="Imagen 2">
+      </div>
+    </div>
+    <div class="carousel-caption position-absolute top-0 start-50 translate-middle-x text-center">
+      <h1 class="text-white cursiva-caligrafica">Texto superpuesto</h1>      
+  </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Anterior</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Siguiente</span>
+    </button>
+  </div>
+
+  <div class="button-container">
+    <a class="btn btn-primary btn-lg" href="/casas" role="button">Casas</a>
+    <a class="btn btn-primary btn-lg" href="/departamentos" role="button">Departamentos</a>
+    <a class="btn btn-primary btn-lg" href="/terrenos" role="button">Terrenos</a>
+  </div>
+
+  {% include 'pie.html' %}

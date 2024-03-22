@@ -1,0 +1,56 @@
+{% include 'cabecera.html' %}
+<div class="row">
+  {% for inmueble in inmuebles %}
+  <div class="col-md-6">
+    <div class="card">
+      <h4 class="card-title">{{ inmueble[1] }}</h4>
+      <div id="carouselExampleFade_{{ loop.index }}" class="carousel slide carousel-fade">
+        <div class="carousel-inner">
+          {% for imagen in inmueble[2:8] %}
+          {% if imagen %}
+          <div class="carousel-item {% if loop.first %}active{% endif %}">
+            <img src="{{ url_for('static', filename='img/' + imagen) }}" class="d-block w-100"
+              alt="Imagen {{ loop.index }}">
+          </div>
+          {% endif %}
+          {% endfor %}
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade_{{ loop.index }}"
+          data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade_{{ loop.index }}"
+          data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      <div class="card-body">
+        <p class="card-text">{{ inmueble[8] }}</p>
+      </div>
+      <p class="d-inline-flex gap-1">
+        <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false"
+          aria-controls="collapseExample">
+          Detalles
+        </a>
+        <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample2" role="button"
+          aria-expanded="false" aria-controls="collapseExample2">
+          URL
+        </a>
+      </p>
+      <div class="collapse" id="collapseExample">
+        <div class="card card-body">
+          {{inmueble[10]}}
+        </div>
+      </div>
+      <div class="collapse" id="collapseExample2">
+        <div class="card card-body">
+          {{inmueble[9]}}
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% include 'pie.html' %}

@@ -1,0 +1,141 @@
+{% include 'cabecera.html' %}
+<br>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="table-responsive">
+                <table class="table table-primary">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Titulo</th>
+                            <th scope="col">Imagen1</th>
+                            <th scope="col">Imagen2</th>
+                            <th scope="col">Imagen3</th>
+                            <th scope="col">Imagen4</th>
+                            <th scope="col">Imagen5</th>
+                            <th scope="col">Imagen6</th>
+                            <th scope="col">Descripcion</th>
+                            <th scope="col">Url</th>
+                            <th scope="col">Detalles</th>
+                            <th scope="col">Tipo</th>
+                            <th scope="col">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for inmueble in inmuebles %}
+                        <tr class="">
+                            <td>{{ inmueble[0] }}</td>
+                            <td>{{ inmueble[1] }}</td>
+                            <td><img src="../static/img/{{ inmueble[2] }}" style="width: 150px; height: 50px;" class="img-thumbnail"
+                                    alt="1"></td>
+                            <td><img src="../static/img/{{ inmueble[3] }}" style="width: 150px; height: 50px;" class="img-thumbnail"
+                                    alt="2"></td>
+                            <td><img src="../static/img/{{ inmueble[4] }}" style="width: 150px; height: 50px;" class="img-thumbnail"
+                                    alt="3"></td>
+                            <td><img src="../static/img/{{ inmueble[5] }}" style="width: 150px; height: 50px;" class="img-thumbnail"
+                                    alt="4"></td>
+                            <td><img src="../static/img/{{ inmueble[6] }}" style="width: 150px; height: 50px;" class="img-thumbnail"
+                                    alt="5"></td>
+                            <td><img src="../static/img/{{ inmueble[7] }}" style="width: 150px; height: 50px;" class="img-thumbnail"
+                                    alt="6"></td>
+                            <td>{{ inmueble[8] }}</td>
+                            <td>{{ inmueble[9]|truncate(30, True, '...') }}</td>
+                            <td>{{ inmueble[10] }}</td>
+                            <td>{{ inmueble[11] }}</td>
+                            <td>
+                                <form action="/inmuebles/borrar" method="post">
+                                    <input value="{{ inmueble[0] }}" type="hidden" name="txtID" id="txtID">
+                                    <button type="submit" class="btn btn-danger btn-admin-styles">Borrar</button>
+                                </form>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">CREA TU PUBLICACION</div>
+                <div class="card-body">
+                    <form action="/inmuebles/guardar" method="post" enctype="multipart/form-data">
+                        <div class="mb-3">
+                            <label for="txtTitulo" class="form-label">Titulo</label>
+                            <input type="text" class="form-control" name="txtTitulo" id="txtTitulo"
+                                aria-describedby="helpId" placeholder="Ingrese el Titulo" />
+                            <small id="helpId" class="form-text text-muted">Titulo de la publicación</small>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="txtImagen1" class="form-label">Imagen1</label>
+                            <input type="file" class="form-control" name="txtImagen1" id="txtImagen1"
+                                aria-describedby="helpId" placeholder="Seleccione la Imagen 1" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="txtImagen2" class="form-label">Imagen2</label>
+                            <input type="file" class="form-control" name="txtImagen2" id="txtImagen2"
+                                aria-describedby="helpId" placeholder="Seleccione la Imagen 2" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="txtImagen3" class="form-label">Imagen3</label>
+                            <input type="file" class="form-control" name="txtImagen3" id="txtImagen3"
+                                aria-describedby="helpId" placeholder="Seleccione la Imagen 3" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="txtImagen4" class="form-label">Imagen4</label>
+                            <input type="file" class="form-control" name="txtImagen4" id="txtImagen4"
+                                aria-describedby="helpId" placeholder="Seleccione la Imagen 4" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="txtImagen5" class="form-label">Imagen5</label>
+                            <input type="file" class="form-control" name="txtImagen5" id="txtImagen5"
+                                aria-describedby="helpId" placeholder="Seleccione la Imagen 5" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="txtImagen6" class="form-label">Imagen6</label>
+                            <input type="file" class="form-control" name="txtImagen6" id="txtImagen6"
+                                aria-describedby="helpId" placeholder="Seleccione la Imagen 6" />
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="txtDescripcion" class="form-label">Descripción</label>
+                            <input type="text" class="form-control" name="txtDescripcion" id="txtDescripcion"
+                                aria-describedby="helpId" placeholder="Describa el Inmueble" />
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="txtURL" class="form-label">Url</label>
+                            <input type="text" class="form-control" name="txtURL" id="txtURL" aria-describedby="helpId"
+                                placeholder="Seleccione Imagenes" />
+                            <small id="helpId" class="form-text text-muted">Url de Descarga</small>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="txtDetalles" class="form-label">Detalles</label>
+                            <input type="text" class="form-control" name="txtDetalles" id="txtDetalles"
+                                aria-describedby="helpId" placeholder="Seleccione Imagenes" />
+                            <small id="helpId" class="form-text text-muted">Detalles</small>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="txtTipo" class="form-label">Tipo</label>
+                            <input type="text" class="form-control" name="txtTipo" id="txtTipo"
+                                aria-describedby="helpId" placeholder="Seleccione Imagenes" />
+                            <small id="helpId" class="form-text text-muted">Tipo</small>
+                        </div>
+
+                        <button type="submit" class="btn btn-success">
+                            CREAR
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% include 'pie.html' %}

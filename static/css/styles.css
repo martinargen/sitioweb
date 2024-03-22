@@ -1,0 +1,120 @@
+.row {
+    margin: 0;
+    padding: 0;
+}
+
+.card {
+    margin: 80px 30px 10px 0;
+}
+
+.nosotros h5,
+.nosotros h1 {
+    margin-top: 30px;
+    color: aliceblue;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#index-sitio {
+    /* Estilos específicos para la clase .row dentro de #index-sitio */
+    padding: 20px;
+    /* Ejemplo de relleno */
+    margin: 80px 0 0 0;
+}
+
+#nav-bar {
+
+    padding: 10px;
+    /* Ajusta según sea necesario */
+    width: 100%;
+}
+
+#nav-bar .navbar {
+    margin: 0;
+}
+
+#nav-bar .navbar-nav {
+    display: flex;
+    justify-content: space-around;
+    /* Cambié space-between a space-around para un espaciado más equitativo */
+    width: 100%;
+}
+
+#nav-bar .nav-item {
+    color: aliceblue;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+#nav-bar .nav-item svg {
+    margin-bottom: 5px;
+    /* Espacio entre el icono y el texto */
+}
+
+#nav-bar .nav-item span {
+    display: block;
+    /* Hace que el texto aparezca en una nueva línea */
+    font-size: 0.8rem;
+    /* Ajusta según sea necesario */
+}
+
+#footer {
+    margin: 100px 0 0 0;
+    color: #fefefe;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    box-shadow: 2px -2px 5px #999;
+}
+
+#audio {
+    margin: 30px 0 0 0;
+}
+
+#img-instagram {
+    width: 50px;
+    height: 50px;
+}
+
+/* Estilos para el carousel */
+#carouselExample img {
+    max-width: 800px;
+    /* Ancho máximo deseado */
+    height: auto;
+    /* Altura ajustada automáticamente para mantener la proporción */
+}
+
+/* Alineación vertical al centro para las imágenes del carousel */
+#carouselExample .carousel-item img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Estilo para las imágenes del carrusel */
+.carousel-item img {
+    width: 100%; /* Hace que la imagen ocupe el ancho completo del contenedor */
+    height: auto; /* La altura se ajustará automáticamente para mantener la relación de aspecto */
+    max-height: 500px; /* Establece la altura máxima de las imágenes */
+    object-fit: cover; /* Hace que la imagen cubra todo el contenedor, sin distorsionarse */
+}
+
+/* Estilo para el contenedor de los botones */
+.button-container {
+    display: flex; /* Utiliza flexbox para organizar los elementos */
+    justify-content: space-between; /* Distribuye los elementos equitativamente a lo largo del contenedor */
+}
+
+/* Estilo para los botones */
+.button-container a {
+    flex: 1; /* Establece que cada botón ocupe el mismo espacio dentro del contenedor */
+    margin: 40px 10px 0 0; /* Añade un margen entre los botones */
+}
+
+
+
+.cursiva-caligrafica {
+    font-family: 'Parisienne', cursive;
+    font-size: 2rem;
+}
